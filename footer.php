@@ -32,13 +32,11 @@
 			<img src="logo-udb.jpg" 
 			class="logo-udb-footer" alt="Logo UDB">
 			<span class="style2">URATCARE</span></a>
-            <p align="justify">Media informasi dan edukasi kesehatan yang membahas penyakit asam urat, </p>
-            <p align="justify">mulai dari pengenalan penyakit, gejala, faktor risiko, pencegahan, hingga penanganan.</p>
+            <p align="justify">Informasi dan edukasi kesehatan asam urat untuk hidup lebih sehat.</p>
+            <p align="justify">Kenali Gejalanya, Cegah Risikonya, Jaga Kesehatan Sendi.</p>
       </div>
         <div class="footer-note">
-            <p>Kenali Gejalanya, Cegah Risikonya, Jaga Kesehatan Sendi.</p>
-            <p>&copy; <?php echo date("Y"); ?>URATCARE All Rights Reserved
-			Program Studi D3-RMIK UDB</p>
+            <p>&copy Oxy Bagus Revando-250205024-URATCARE</p>
       </div>
     </div>
 </footer>
