@@ -1,0 +1,933 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@600;700;800&display=swap');
+
+/* =====================================
+   1. ROOT DAN PENGATURAN DASAR
+===================================== */
+
+:root {
+    --green: #247a61;
+    --green-dark: #185b49;
+    --mint: #eaf5ef;
+    --text: #263b35;
+    --muted: #687a73;
+    --cream: #f8fbf8;
+    --line: #e3ece6;
+    --white: #fff;
+    --orange: #f3b66b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'DM Sans', Arial, sans-serif;
+    color: var(--text);
+    background: #fff;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+
+/* =====================================
+   2. HEADER DAN NAVIGASI
+===================================== */
+
+.topbar {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-wrap {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: Nunito, sans-serif;
+    font-size: 19px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.brand-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+    background: var(--green);
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+}
+
+.brand-accent {
+    color: var(--green);
+    margin-left: 3px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.navigation a {
+    font-size: 12px;
+    font-weight: 700;
+    color: #596d65;
+    padding: 9px 10px;
+    border-radius: 8px;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background: var(--mint);
+    color: var(--green-dark);
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: var(--mint);
+    color: var(--green);
+    font-size: 22px;
+    padding: 7px 12px;
+    border-radius: 8px;
+}
+
+
+/* =====================================
+   3. HERO SECTION
+===================================== */
+
+.hero {
+    background: linear-gradient(
+        115deg,
+        #f1f8f3 0%,
+        #fbfdfb 58%,
+        #e8f4ec 100%
+    );
+    padding: 72px 0 65px;
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    align-items: center;
+    gap: 35px;
+}
+
+.eyebrow {
+    color: var(--green);
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.hero h1,
+.page-banner h1 {
+    font: 800 clamp(34px, 5vw, 54px)/1.15 Nunito, sans-serif;
+    letter-spacing: -1.4px;
+    margin: 14px 0 18px;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+.hero-text > p {
+    max-width: 590px;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 26px 0 18px;
+}
+
+.btn {
+    display: inline-block;
+    border: 0;
+    border-radius: 9px;
+    padding: 12px 19px;
+    font: 700 13px 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--green);
+    color: white;
+    box-shadow: 0 5px 13px #247a6126;
+}
+
+.btn-light {
+    background: white;
+    color: var(--green);
+    border: 1px solid var(--line);
+}
+
+.small-note {
+    font-size: 11px;
+    color: #81918a;
+}
+
+
+/* =====================================
+   4. HERO ART DAN ILUSTRASI
+===================================== */
+
+.hero-art {
+    min-height: 330px;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.art-circle {
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    background: #d9eee0;
+    display: grid;
+    place-items: center;
+    position: relative;
+    box-shadow: 0 0 0 22px #e7f3e9;
+}
+
+.joint-emoji {
+    font-size: 125px;
+    filter: drop-shadow(0 12px 8px #557a6025);
+}
+
+.art-label {
+    position: absolute;
+    bottom: 12px;
+    right: -20px;
+    background: white;
+    padding: 13px 18px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px #244b351b;
+    font-size: 13px;
+}
+
+.art-label small,
+.floating-card small {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.floating-card {
+    position: absolute;
+    top: 22px;
+    left: 0;
+    background: #fff;
+    padding: 12px 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 30px #244b3518;
+    font-size: 12px;
+}
+
+.floating-card > span {
+    font-size: 25px;
+}
+
+
+/* =====================================
+   5. SECTION DAN KARTU INFORMASI
+===================================== */
+
+.section {
+    padding-top: 68px;
+    padding-bottom: 68px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 32px;
+}
+
+.section-heading.left {
+    text-align: left;
+    margin-left: 0;
+}
+
+.section-heading h2,
+.content-section h2,
+.reminder h2 {
+    font: 800 27px Nunito, sans-serif;
+    margin: 8px 0;
+}
+
+.section-heading p,
+.content-section p {
+    color: var(--muted);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.info-card,
+.symptom-card,
+.contact-card {
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    padding: 24px;
+    background: #fff;
+    box-shadow: 0 5px 18px #284e3910;
+}
+
+.card-icon {
+    font-size: 29px;
+    background: var(--mint);
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+}
+
+.info-card h3,
+.symptom-card h3,
+.contact-card h3 {
+    font: 800 17px Nunito, sans-serif;
+    margin: 13px 0 5px;
+}
+
+.info-card p,
+.symptom-card p,
+.contact-card p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.info-card a,
+.text-link {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* =====================================
+   6. REMINDER
+===================================== */
+
+.reminder {
+    margin-bottom: 70px;
+    background: #f0f7f1;
+    border-radius: 16px;
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.reminder-icon {
+    font-size: 34px;
+}
+
+.reminder h2 {
+    font-size: 20px;
+}
+
+.reminder p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    max-width: 650px;
+}
+
+.reminder .btn {
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+
+/* =====================================
+   7. PAGE BANNER DAN CONTENT
+===================================== */
+
+.page-banner {
+    background: var(--mint);
+    padding: 48px 0 45px;
+}
+
+.page-banner h1 {
+    font-size: 38px;
+    margin: 8px 0;
+}
+
+.page-banner p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.content-section {
+    padding-top: 52px;
+    padding-bottom: 70px;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1.5fr .8fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.content-section h2 {
+    font-size: 23px;
+    margin-top: 8px;
+}
+
+.content-section p {
+    font-size: 14px;
+}
+
+.check-list {
+    padding-left: 20px;
+    color: #53665e;
+    font-size: 14px;
+}
+
+.check-list li {
+    padding: 5px 0;
+}
+
+.check-list li::marker {
+    color: var(--green);
+}
+
+.side-card {
+    background: #f7faf7;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 27px;
+}
+
+.side-card.pale {
+    background: #f0f7f1;
+}
+
+.side-card h3 {
+    font: 800 20px Nunito;
+    margin: 6px 0;
+}
+
+.side-card p {
+    font-size: 13px;
+}
+
+.big-emoji {
+    text-align: center;
+    font-size: 75px;
+    padding: 12px;
+}
+
+
+/* =====================================
+   8. GEJALA DAN NOTICE
+===================================== */
+
+.symptom-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.symptom-card span {
+    font-size: 29px;
+}
+
+.notice {
+    margin: 28px 0;
+    background: #fff8ec;
+    border-left: 4px solid var(--orange);
+    padding: 17px 20px;
+    border-radius: 8px;
+    color: #715a3b;
+    font-size: 13px;
+}
+
+.subheading {
+    margin-top: 35px !important;
+}
+
+
+/* =====================================
+   9. TIMELINE
+===================================== */
+
+.timeline {
+    border-left: 2px solid #cfe4d5;
+    margin: 20px 0 0 8px;
+    padding-left: 25px;
+    display: grid;
+    gap: 22px;
+}
+
+.timeline > div {
+    position: relative;
+}
+
+.timeline > div:before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--green);
+    left: -32px;
+    top: 7px;
+}
+
+.timeline b {
+    font: 800 16px Nunito;
+}
+
+.timeline p {
+    margin: 4px 0;
+}
+
+
+/* =====================================
+   10. TIPS DAN SARAN
+===================================== */
+
+.tips-list {
+    display: grid;
+    gap: 13px;
+    max-width: 850px;
+}
+
+.tip-row {
+    display: flex;
+    gap: 18px;
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+}
+
+.tip-row > span {
+    font-size: 28px;
+    background: var(--mint);
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.tip-row h3 {
+    font: 800 16px Nunito;
+    margin: 0;
+}
+
+.tip-row p {
+    margin: 3px 0 0;
+    font-size: 13px;
+}
+
+
+/* =====================================
+   11. FORMULIR
+===================================== */
+
+.form-layout {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 45px;
+    align-items: start;
+}
+
+.form-intro h2 {
+    font-size: 26px;
+}
+
+.form-side-note {
+    display: flex;
+    gap: 12px;
+    background: var(--mint);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+.form-side-note:first-child {
+    font-size: 25px;
+}
+
+.form-card {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 27px;
+    box-shadow: 0 8px 24px #244b3510;
+}
+
+.form-card label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 13px 0 5px;
+}
+
+.form-card input,
+.form-card textarea {
+    width: 100%;
+    border: 1px solid #dce7df;
+    border-radius: 8px;
+    padding: 12px;
+    font: 13px 'DM Sans', sans-serif;
+    outline: none;
+    background: #fcfdfc;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px #247a6117;
+}
+
+.form-card textarea {
+    resize: vertical;
+}
+
+.full-btn {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.form-message {
+    font-size: 12px;
+    color: #b54736;
+    margin-top: 8px;
+}
+
+.error-box {
+    background: #fff0ee;
+    color: #a13e31;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.error-box p {
+    margin: 3px 0;
+}
+
+.success-box {
+    background: #f0f8f2;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.success-box h3 {
+    font-family: Nunito;
+    margin-top: 0;
+}
+
+.success-box p {
+    font-size: 13px;
+}
+
+
+/* =====================================
+   12. KONTAK DAN SUMBER
+===================================== */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.contact-card span {
+    font-size: 30px;
+}
+
+.source-box {
+    margin-top: 35px;
+    padding: 25px;
+    background: #f7faf7;
+    border-radius: 14px;
+}
+
+.source-box h2 {
+    margin-top: 0;
+}
+
+.source-box li {
+    padding: 5px 0;
+    color: var(--green);
+    font-size: 13px;
+}
+
+.source-box a {
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   13. FOOTER
+===================================== */
+
+.footer {
+    background: #183d32;
+    color: #e9f3ed;
+    padding: 35px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-brand {
+    color: white;
+}
+
+.footer-brand .brand-accent {
+    color: #9bd4b0;
+}
+
+.footer p {
+    font-size: 11px;
+    color: #c1d2c8;
+    margin: 7px 0;
+}
+
+.footer-note {
+    text-align: right;
+}
+
+
+/* =====================================
+   14. RESPONSIVE - TABLET
+===================================== */
+
+@media (max-width: 980px) {
+
+    .navigation {
+        gap: 0;
+    }
+
+    .navigation a {
+        padding: 8px 6px;
+        font-size: 11px;
+    }
+
+    .hero-grid {
+        gap: 10px;
+    }
+
+    .art-circle {
+        width: 240px;
+        height: 240px;
+    }
+
+    .hero-art {
+        min-height: 280px;
+    }
+
+    .joint-emoji {
+        font-size: 105px;
+    }
+}
+
+
+/* =====================================
+   15. RESPONSIVE - MOBILE
+===================================== */
+
+@media (max-width: 760px) {
+
+    .nav-wrap {
+        min-height: 67px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navigation {
+        display: none;
+        position: absolute;
+        top: 67px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 12px 5%;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 10px 15px #0000000a;
+        flex-wrap: wrap;
+    }
+
+    .navigation.show {
+        display: flex;
+    }
+
+    .navigation a {
+        width: 50%;
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .hero {
+        padding: 48px 0;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-art {
+        min-height: 270px;
+        margin-top: 15px;
+    }
+
+    .art-circle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .joint-emoji {
+        font-size: 95px;
+    }
+
+    .art-label {
+        right: 0;
+    }
+
+    .floating-card {
+        left: 2%;
+    }
+
+    .info-grid,
+    .symptom-grid,
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .reminder {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .reminder .btn {
+        margin-left: 0;
+    }
+
+    .two-col,
+    .form-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .page-banner h1 {
+        font-size: 31px;
+    }
+
+    .footer-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-note {
+        text-align: left;
+    }
+}
+
+
+/* =====================================
+   16. RESPONSIVE - HP KECIL
+===================================== */
+
+@media (max-width: 480px) {
+
+    .info-grid,
+    .symptom-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .section {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .form-card {
+        padding: 19px;
+    }
+
+    .tip-row {
+        padding: 14px;
+    }
+
+    .reminder {
+        padding: 20px;
+    }
+}
+/* PERBAIKAN WARNA TULISAN HEADER */
+.topbar .brand,
+.topbar .brand-accent {
+    color: #ffffff !important;
+}
+
+.topbar .navigation a {
+    color: #ffffff !important;
+}
+
+.topbar .navigation a:hover,
+.topbar .navigation a.active {
+    color: #ffffff !important;
+    background: rgba(255,255,255,0.20);
+}
