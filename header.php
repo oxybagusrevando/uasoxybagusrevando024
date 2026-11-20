@@ -28,13 +28,13 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
 /* WARNA MENU */
 .navigation a {
-    color: white !important;
+    color:#000000 !important;
 }
 
 /* MENU AKTIF */
 .navigation a.active {
     background: rgba(255,255,255,0.25);
-    color: white !important;
+    color: #000000 !important;
     border-radius: 8px;
     padding: 10px;
 }
@@ -56,6 +56,14 @@ $current_page = basename($_SERVER['PHP_SELF']);
     color: #FFFFFF !important;
 }
 .style3 {font-size: xx-large}
+/* WARNA HITAM UNTUK SEMUA TULISAN MENU */
+#mainNav a,
+#mainNav a:link,
+#mainNav a:visited,
+#mainNav a:hover,
+#mainNav a.active {
+    color: #000000 !important;
+}
 </style>
 </head>
 <body>
